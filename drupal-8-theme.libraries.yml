@@ -1,0 +1,9 @@
+drupal-8-theme-libraries:
+  css:
+    theme:
+      css/drupal-8-theme.style.css: {}
+  js:
+    js/drupal-8-theme.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
