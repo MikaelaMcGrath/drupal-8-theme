@@ -20,19 +20,20 @@ First, run `$ composer -v` to check Composer is installed. If it isn't, follow t
 3. Test the installation with `$ composer -v`.
 4. Add the package to `composer.json` file by adding this object to the `"repositories"` object, before the existing `"packagist"` object. This will allow Composer to use the Git repository as a package source.
 ```json
-    "drupal_8_theme": {
-      "type": "package",
-      "package": {
-        "name": "drupal-8-theme",
-        "type": "drupal-custom-theme",
-        "version": "dev-master",
-        "source": {
-          "type": "git",
-          "url": "https://github.com/MikaelaMcGrath/drupal-8-theme",
-          "reference": "master"
-        }
-      }
-    }
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "drupal-8-theme",
+                "type": "drupal-custom-theme",
+                "version": "dev-master",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/MikaelaMcGrath/drupal-8-theme",
+                    "reference": "master"
+                }
+            }
+        },
 ```
 5. Run `$ composer require govau/message-lab-theme:dev-master` to add the package to the list of dependencies.
 6. Run `$ composer update` to install the package and update the `composer.lock` file.
