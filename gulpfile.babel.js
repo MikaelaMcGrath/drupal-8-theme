@@ -152,7 +152,7 @@ function server(done) {
 
 // Watch for changes to Sass, twig files and .js.
 function watch() {
-  gulp.watch(['./src/sass/**/*.scss', './pancake/**/*.scss'], sass);
+  gulp.watch(['./src/sass/**/*.scss'], sass);
   gulp.watch(['./templates/**/*.html.twig', '*.theme'], twigWatch);
   gulp.watch('./src/scripts/**/*.js', gulp.series(js, jsWatch));
   gulp.watch('./src/images/**/*.*', optimiseImages);
