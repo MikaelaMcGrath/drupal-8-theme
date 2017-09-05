@@ -3,3 +3,5 @@ type: theme
 description: Theme for gulp in Drupal
 core: 8.x
 base theme: classy
+libraries:
+  - drupal_8_theme/drupal-8-theme-libraries
