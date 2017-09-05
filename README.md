@@ -75,4 +75,20 @@ For this to work properly, you must already have the Drupal 8 site you wish to p
   4. Begin watching changes to SCSS files in the `/sass/` folder, twig files in the `/templates/` folder and JavaScript in the `/js/` folder. Changes to SCSS files will be injected into the local proxy, and changes to javascript and twig files will trigger a browser reload.
 6. There is no need to minify CSS and JavaScript because this will be done by Drupal. Run `$ gulp --production` to proxy the live site as configured in `config.yml` and to remove source maps. You can also run [Uncss](https://github.com/giakki/uncss) by uncommenting the relevant line in `gulpfile.js`. Note, this can cause problems when scripts add selectors to the HTML and may require some configuration.
 
+### Setup theme
+Rename files to your theme name;
+1. themes/custom/YOURTHEMENAME
+2. themes/custom/YOURTHEMENAME (name and document changes)
+  - YOURTHEMENAME.breakpoints.yml
+  - YOURTHEMENAME.libraries.yml
+  - YOURTHEMENAME.layouts.yml
+  - YOURTHEMENAME.info.yml
+3. Inside YOURTHEMENAME.info.yml update;
+  - name
+  - description
+  - libraries
+4. themes/custom/YOURTHEMENAME/src
+  - sass
+  - scripts
+
 Initial author: Jesse Boyd. Minor changes: Mikaela McGrath
