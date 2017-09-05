@@ -1,9 +1,9 @@
-# Message Lab Theme
+# Drupal 8 Theme
 ## What is this?
-This is a custom theme for the Digital Transformation Agency's internal Message Lab Drupal 8 site. It is a sub-theme of Classy and incorporates elements of the DTA's [UI Kit](https://github.com/govau/uikit).
+This is a custom theme for the Drupal 8 with gulp. It is a sub-theme of Classy.
 
 ## What does this theme contain?
-Message Lab Theme is a Drupal 8 front-end theme. It provides template overrides and preprocess functions to enable theme hook suggestions. It also adds appropriate selectors to apply the UI Kit.
+Drupal 8 Theme is a Drupal 8 front-end theme. It provides template overrides and preprocess functions to enable theme hook suggestions. 
 
 ## Adding the theme to your project
 We recommend adding the site to a Drupal 8 project using Composer. It can also be done manually.
@@ -20,15 +20,15 @@ First, run `$ composer -v` to check Composer is installed. If it isn't, follow t
 3. Test the installation with `$ composer -v`.
 4. Add the package to `composer.json` file by adding this object to the `"repositories"` object, before the existing `"packagist"` object. This will allow Composer to use the Git repository as a package source.
 ```json
-    "message_theme": {
+    "drupal_8_theme": {
       "type": "package",
       "package": {
-        "name": "govau/message-lab-theme",
+        "name": "drupal-8-theme",
         "type": "drupal-custom-theme",
         "version": "dev-master",
         "source": {
           "type": "git",
-          "url": "https://github.com/govau/message-lab-theme",
+          "url": "https://github.com/MikaelaMcGrath/drupal-8-theme",
           "reference": "master"
         }
       }
@@ -52,7 +52,7 @@ The theme uses gulp.js to create a local server, compile Sass into CSS, inject s
 
 Generally, you will need a local server to develop sites on, though you can use the `--staging` or `--production` flags to run a local BrowserSync server proxying a remote server.
 
-The gulp task will also automatically check if the dependencies are up-to-date. This pertains in particular to the @govau/* UI Kit packages, however it will check all of them. You will receive an error in gulp if anything is out of date. You can update the packages manually or you can use [npm-check -u](https://github.com/dylang/npm-check) to do it in a nice, friendly way. Please note that npm-check will pick up some missing packages within UI Kit. These can be ignored and are found in .npmcheckrc.
+The gulp task will also automatically check if the dependencies are up-to-date. You will receive an error in gulp if anything is out of date. You can update the packages manually or you can use [npm-check -u](https://github.com/dylang/npm-check) to do it in a nice, friendly way. Please note that npm-check will pick up some missing packages within UI Kit. These can be ignored and are found in .npmcheckrc.
 
 ### About gulp
 
@@ -73,3 +73,5 @@ For this to work properly, you must already have the Drupal 8 site you wish to p
   3. Start a local server proxying the `development` site listed in the `config.yml` file.
   4. Begin watching changes to SCSS files in the `/sass/` folder, twig files in the `/templates/` folder and JavaScript in the `/js/` folder. Changes to SCSS files will be injected into the local proxy, and changes to javascript and twig files will trigger a browser reload.
 6. There is no need to minify CSS and JavaScript because this will be done by Drupal. Run `$ gulp --production` to proxy the live site as configured in `config.yml` and to remove source maps. You can also run [Uncss](https://github.com/giakki/uncss) by uncommenting the relevant line in `gulpfile.js`. Note, this can cause problems when scripts add selectors to the HTML and may require some configuration.
+
+Initial author: Jesse Boyd. Minor changes: Mikaela McGrath
